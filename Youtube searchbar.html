@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #mainbar{
+            display: grid;
+            grid-gap: 1%;
+            grid-template-columns:3% 18% 50% 4% 4% 4% 4% 6%;
+            grid-template-rows: 20%;
+            grid-gap:1%;
+            margin:3%;
+
+        }
+       h3{
+            margin:0px;    
+            
+        }
+        ion-icon {
+         color: black;
+         
+         }
+        #mainbar>a>img{
+            width:60%;
+            height:500%;
+            margin-top: -11%;
+        }
+        ion-icon {
+       font-size: 22px;
+       }
+       .searchbox{
+           display: flex;
+           align-items: center;
+           margin:2.5%;
+           justify-content: center;
+           
+       }
+       .searchbox>input{
+           padding:2%;
+           width: 75%;
+           border: 1px solid grey;
+           outline: none;
+       }
+
+       .searchbox>input:hover{
+           border: 1px solid blue;
+       }
+       .searchbox>button{
+           padding:1.5% 5%;
+           border: 1px solid gray;
+           font-weight: 600;
+           border-radius: 5%;
+           border:none;
+       }
+       .searchbox>button:hover{
+           background-color: #B0BEC5;
+       }
+       #videos{
+           background-color: #ECEFF1;
+       }
+       #videos>div{
+            display: grid;
+            grid-template-columns: 30% 60%;
+            grid-gap:1%;
+            margin-top: 1%;
+            margin-left: 2%;
+        }
+        #front{
+            display: grid;
+            grid-template-columns: 20% 80%;
+        }
+        #left>div>ion-icon{
+            margin: 2% 12%;
+            vertical-align: middle;
+        }
+        #left{
+            font-size: 20px;
+        }
+        #left>div{
+            margin-top: 3%;
+        }
+        #left>div:hover{
+            background-color: #B0BEC5;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainbar">
+        <ion-icon name="reorder-three-outline"></ion-icon>
+        <a href=frontpage.html><img src="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500" width="90%" /></a>
+        <div class="searchbox">
+            
+            <input id="query" type="text" placeholder="Search"></input>
+            <button onclick="searchVideos()"><ion-icon name="search-outline"></ion-icon></button>
+          </div>   
+         <ion-icon name="mic-outline"></ion-icon>   
+          <ion-icon name="videocam-outline"></ion-icon>
+         <ion-icon name="apps-outline"></ion-icon>
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-icon name="ellipse-outline" style=" font-size: 26px"></ion-icon>
+    </div>
+
+    <div id="front">
+        <div id="left">
+            <div><ion-icon name="home-outline"></ion-icon>Home</div>
+            <div><ion-icon name="compass-outline"></ion-icon>Explore</div>
+            <div><ion-icon name="compass-outline"></ion-icon>Subsciptions</div>
+            <hr/>
+            <div><ion-icon name="albums-outline"></ion-icon>Library</div>
+            <div><ion-icon name="timer-outline"></ion-icon>History</div>
+            <div><ion-icon name="time-outline"></ion-icon>Watch Later</div>
+            <div><ion-icon name="thumbs-up-outline"></ion-icon>Liked videos</div>
+        </div>
+        <div id="videos"></div>
+    </div>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+<script>
+
+    async function searchVideos(){
+    
+        let query = document.getElementById("query").value;
+    
+        let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyAdtkGe7pygoam4nKYQqZ-iJtAXHGVh5zQ&part=snippet&maxResults=20`);
+        
+        let data = await res.json();
+    
+        console.log("data:",data);
+    
+        appendVideos(data.items)
+    
+    }
+    // AIzaSyAdtkGe7pygoam4nKYQqZ-iJtAXHGVh5zQ
+    // https://youtube.googleapis.com/youtube/v3/search?q=csk&key=[YOUR_API_KEY] HTTP/1.1
+    // https://youtube.googleapis.com/youtube/v3/search?q=csk&type=video&key=[YOUR_API_KEY]
+    
+    let videos=document.getElementById("videos");
+    
+    function appendVideos(video_data){
+    
+        videos.innerHTML=null;
+        video_data.forEach(({id:{videoId},snippet:{title,description,channelTitle}} )=> {
+    
+            let divx=document.createElement("div");
+            let div=document.createElement("div");
+            let div1=document.createElement("div");
+            let div_1=document.createElement("h3");
+            let div_2=document.createElement("div");
+            let div_3=document.createElement("p");
+            div_1.style.marginTop="5px";
+            div_2.style.marginTop="5px";
+            div_2.style.fontSize="15px";
+            div_3.style.marginTop="5px";
+            div_3.style.fontSize="13px";
+    
+            div1.style.marginTop="10px";
+    
+            div_1.textContent=title;
+            div_2.textContent=description;
+            div_3.textContent=channelTitle;
+            div.innerHTML = `<iframe width="300" height="200" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            div.style.marginTop="20px";
+            div1.append(div_1,div_3,div_2);
+            divx.append(div,div1);
+            videos.append(divx);
+    
+        });
+    
+    }
+    
+    </script>
