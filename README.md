@@ -8,7 +8,7 @@ youtube searchbar &amp; most popular videos in india
 
 ## Snapshot from the Built Project
 
-> <img src = "images/homePage.png" style="width:300px" alt = "Home Page" />  &emsp;
+> <img src = "https://masai-course.s3.ap-south-1.amazonaws.com/users/2119/submissions/215196/390032/82923f7f8605fa6e891a0b309566bea0/youtube%20searchbar.PNG" style="width:300px" alt = "Home Page" />  &emsp;
 > <img src = "images/coursePage.jpg" style="width:300px" alt = "Course Page" /> &emsp;
 
 
