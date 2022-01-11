@@ -5,7 +5,6 @@ youtube searchbar &amp; most popular videos in india
 > <img src = "https://i.stack.imgur.com/PgcSR.png" width = "100" height = "100" alt = "HTML Logo"/>
 > &ensp; <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" width = "100" height = "100" alt ="HTML Logo"/>
 > &ensp; <img src = "https://cdn.iconscout.com/icon/free/png-256/javascript-2752148-2284965.png" width = "100" height = "100" alt = "Javascript Logo">
-> &ensp; <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb3n688CPY8TV8whVSoQBhrY3rzfrU02FT2t4Z2WPvNOGz2edLCBoLsjoKOzStjYW4yCY&usqp=CAU" width = "300" height ="100">
 
 ## Snapshot from the Built Project
 
