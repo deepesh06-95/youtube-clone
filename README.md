@@ -8,8 +8,8 @@ youtube searchbar &amp; most popular videos in india
 
 ## Snapshot from the Built Project
 
-> <img src = "https://masai-course.s3.ap-south-1.amazonaws.com/users/2119/submissions/215196/390032/82923f7f8605fa6e891a0b309566bea0/youtube%20searchbar.PNG" style="width:300px" alt = "Home Page" />  &emsp;
-> <img src = "images/coursePage.jpg" style="width:300px" alt = "Course Page" /> &emsp;
+> <img src = "https://masai-course.s3.ap-south-1.amazonaws.com/users/2119/submissions/215196/390032/82923f7f8605fa6e891a0b309566bea0/youtube%20searchbar.PNG" style="width:400px" alt = "Page" />  &emsp;
+> <img src = "https://masai-course.s3.ap-south-1.amazonaws.com/users/2119/submissions/215196/390031/f77ff214a6c3f34ca9b53f96d7f1e845/youtube_mostpopularindia.PNG" style="width:400px" alt = "Page" /> &emsp;
 
 
 
